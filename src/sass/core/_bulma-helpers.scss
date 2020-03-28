@@ -1,0 +1,125 @@
+.divider{
+  display: block;
+  width: 100%;
+  @for $i from 1 through 7{
+      &.is-size-#{$i}{
+          height:#{$i}rem ;
+      }
+  }
+}
+
+.video-wrapper {
+  height: 0;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  overflow: hidden;
+  position: relative;
+
+  embed,
+  iframe,
+  object {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+//text helpers
+$weight-sizes:100,300,400,500,600,700,800,900;
+
+@each $weight-size in $weight-sizes {
+  $i: index($weight-sizes, $weight-size);
+  .fw-#{$weight-size} {
+    font-weight: $weight-size!important;
+  }
+}
+
+$n: 1;
+@while $n < 9 {
+    
+    @for $i from 0 through 9{
+ 
+     .fz-#{$n}-#{$i}{
+          font-size:  (#{$n} + '.' + #{$i}) + 'rem!important';
+      }  
+    
+    }//end for
+    
+    $n: $n + 1;
+}
+
+$app-colors:(
+  0: ("blue", $blue),
+  1: ("purple", $purple),
+  2: ("red", $red),
+  3: ("orange", $orange),
+  4: ("yellow", $yellow),
+  5: ("green", $green),
+
+  
+);
+@each $name, $value in $app-colors {
+  .c-#{nth($value, 1)} {
+    color:nth($value, 2)!important;
+  }
+}
+@each $name, $value in $app-colors {
+  .bg-#{nth($value, 1)} {
+    background:nth($value, 2)!important;
+  }
+}
+.button{
+  @each $name, $value in $app-colors {
+    &.is-#{nth($value, 1)} {
+      background:nth($value, 2)!important;
+    }
+  }
+  i{
+    margin-right: .5rem;
+  }
+  
+}
+
+
+.tt-uppercase{
+  text-transform: uppercase!important;
+}
+.ta-center{
+  text-align: center;
+}
+.ts{
+  @include textShadow;
+}
+.d-flex{
+  display: flex!important;
+}
+.jc-center{
+  justify-content: center;
+}
+.ai-center{
+  align-items: center;
+}
+.fd-r{
+  flex-direction: row!important;
+}
+.fd-c{
+  flex-direction: column!important;
+}
+.ai-fs{
+  align-items: flex-start!important;
+}
+.line-through{
+  text-decoration:line-through;
+}
+.is-fullwidth{
+  width: 100%!important;
+}
+.is-fullheight{
+  @media screen and (min-width:980px){
+    height: 100vh!important;
+  }
+}
+
+

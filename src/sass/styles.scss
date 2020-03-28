@@ -1,0 +1,12 @@
+$fa-font-path:"http://localhost:3000/ginger2/assets/webfonts";//Cambiar por la url absoluta de tu proyecto
+
+@import "./fa/fontawesome";
+@import "./fa/regular";
+@import "./fa/solid";
+@import "./fa/brands";
+@import "./fa/v4-shims";
+
+@import "./core/bulma-colors";
+@import "../../node_modules/bulma/bulma";
+@import "./core/index";
+@import "./theme/index";
